@@ -25,5 +25,5 @@ urlpatterns = [
 #Includes...
 
     path('ver-generos/', include('generos.urls')),
-
+    path('libros-publicados/', include('publicaciones.urls')),
 ]
