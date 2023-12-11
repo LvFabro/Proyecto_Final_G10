@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load  %}
 
 {% block contenido %}
 <br>
@@ -7,17 +7,29 @@
 <br>
 <br>
     <h1>PUBLICACIONES</h1>
-    <h4>Publica un titulo literario.</h4>
+    <h4>Aquí se añanden las publicaciones</h4>    
+    <br>
+        <a href="{% url 'publicar' %}" type="button" class="btn btn-primary btn-lg">Crear Publicacion</a>
+        <br>  
 <br>
+
+{% for publicado in publicarlibros %}
 <div class="card">
-    <div class="card-header">
-      Featured
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">LEER</a>
-    </div>
+  <div class="card-header">
+    <h4>{{publicado.fecha}}</h4>
   </div>
+  <div class="card-body">
+    <h5 class="card-title">{{publicado.titulo}}, de {{publicado.autor}}, Género: {{publicado.categoria}}</h5>
+    <p class="card-text">{{publicado.cuerpo}}</p>
+    <a href="#" class="btn btn-primary">LEER</a>
+  </div>
+</div>
+
+{% endfor %}
+  
+  
+
+
+
     
 {% endblock contenido %}
