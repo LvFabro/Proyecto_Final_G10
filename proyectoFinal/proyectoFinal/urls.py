@@ -27,4 +27,6 @@ urlpatterns = [
     path('ver-generos/', include('generos.urls')),
     path('libros-publicados/', include('publicaciones.urls')),
     path('crear-publicacion/', include('publicaciones.urls')),
+    path('usuarios/', include('usuarios.urls')),
+    
 ]

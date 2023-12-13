@@ -14,14 +14,24 @@
 <br>
 
 {% for publicado in publicarlibros %}
+
 <div class="card">
   <div class="card-header">
     <h4>{{publicado.fecha}}</h4>
   </div>
   <div class="card-body">
-    <h5 class="card-title">{{publicado.titulo}}, de {{publicado.autor}}, Género: {{publicado.categoria}}</h5>
-    <p class="card-text">{{publicado.cuerpo}}</p>
-    <a href="#" class="btn btn-primary">LEER</a>
+    <h5 class="card-title">{{publicado.titulo}}, de {{publicado.autor}}, Género: {{publicado.categoria}} 
+      <span>
+        
+        <!--editar publicacion-->
+        <a href="{% url 'editar' publicado.id %}"><i class="fa-solid fa-file-pen"></i></a>
+        
+        <!--eliminar publicacion-->
+     <a href="{% url 'eliminar' publicado.id %}"><i class="fa-solid fa-xmark"></i></a>
+    
+    </span></h5>
+    <p class="card-text"></p>
+    <a href="" class="btn btn-primary">LEER</a> 
   </div>
 </div>
 

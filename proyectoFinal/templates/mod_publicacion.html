@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h3>Modifica aqui tu publicación.</h3>
+<br>
+    <a href="{% url 'publicacion' %}" type="button" class="btn btn-primary btn-lg">Atrás</a>
+<br>
+<br>
+<h2>Modifique los siguientes campos.</h2>
+<form method="post" style="background-color: #a7a7a7;" > {% csrf_token %}
+{{form}}
+
+<button type="submit" class="btn btn-primary btn-lg">Establecer cambios</button>
+
+</form>
+        
+{% endblock contenido %}
+
+
+    

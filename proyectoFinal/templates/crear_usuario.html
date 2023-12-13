@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+<br>
+<a href="{% url 'index' %}" class="btn btn-primary">Atrás</a>
+    
+<h1>Ingrese los datos correspondientes</h1>
+
+<form method="post" style="background-color: #a7a7a7;" > {% csrf_token %}
+    {{form}}
+    
+    <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+    
+</form>
+
+{% endblock contenido %}
+    

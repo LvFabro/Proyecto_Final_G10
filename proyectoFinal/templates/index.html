@@ -17,6 +17,9 @@
     </div>
 </section>
 
+
+
+
 <!-- Wrapper -->
 <div id="wrapper">
 
@@ -25,15 +28,39 @@
             <div class="inner">
                 <h1>Libreria Vitual del G10</h1>
                 <p>Somos una biblioteca virtual hecha por y para los lectores del INFORMATORIO<br />
-                sin animos de lucro <a href="http://html5up.net/license">Creative Commons</a>.</p>
+                sin animos de lucro.</p>
                 <ul class="actions">
                     <li><a href="#one" class="button scrolly">Leer mas</a></li>
                 </ul>
+                
+                <!--Inicio de sesion-->
+                <span>
+                
+                
                 <ul class="actions">
-                    <li><a href="generic.html" class="button">Iniciar Sesion</a></li>
+                    
+                    
+                    {% if user.is_authenticated  %}
+                        
+                    <li><a href="" class="button">{{user.first_name}}</a></li>
+
+                    {% else %}  
+                    
+                    <li><a href="{% url 'login' %}" class="button">Iniciar Sesion</a></li>
+                    
+
+                    {% endif %}
+                
                 </ul>
+                
+            
+                </span>
                 <ul class="actions">
-                    <li><a href="generic.html" class="button">Registrarse</a></li>
+                    <li><a href="{% url 'logout' %}" class="button">Cerrar Sesión</a></li>
+                </ul>
+                 
+                <ul class="actions">
+                    <li><a href="{% url 'registrar' %}" class="button">Registrarse</a></li>
                 </ul>
             </div>
         </section>

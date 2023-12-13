@@ -16,6 +16,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 print(BASE_DIR)
 
+# Modelo de usuarios nuevo
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -53,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'generos',
     'publicaciones',
+    'usuarios',
 ]
 
 MIDDLEWARE = [
@@ -111,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ar'
 
 TIME_ZONE = 'UTC'
 
@@ -133,3 +138,8 @@ STATICFILES_DIRS= [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Variables de logueo
+
+LOGIN_URL = 'usuarios/login'
+LOGIN_REDIRECT_URL = 'index'

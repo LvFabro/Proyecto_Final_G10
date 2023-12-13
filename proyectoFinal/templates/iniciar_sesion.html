@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<br>
+    <a href="{% url 'index' %}" type="button" class="btn btn-primary btn-lg">Atrás</a>
+<br>
+
+<h2>Iniciar sesion</h2>
+
+<form method="post" style="background-color: #a7a7a7;" >{% csrf_token %}
+    {{form}}
+
+    <button type="submit" class="btn btn-primary btn-lg">Iniciar sesion</button>
+
+</form>
+
+{% endblock contenido %}
+    
