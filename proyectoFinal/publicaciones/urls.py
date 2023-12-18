@@ -6,4 +6,5 @@ urlpatterns = [
     path('crear-publicacion/', views.CrearPublicacionForm.as_view(), name = 'publicar' ),
     path('editar-publicacion/<int:pk>', views.ModificarPublicacionForm.as_view(), name = 'editar'),
     path('eliminar-publicacion/<int:pk>', views.EliminarPublicacionForm.as_view(), name = 'eliminar'),
+    path('leer-publicacion/<int:pk>', views.LeerPublicacionForm.as_view(), name = 'leer'),
 ]

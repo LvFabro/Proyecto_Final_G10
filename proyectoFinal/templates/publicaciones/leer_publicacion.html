@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+
+<br>
+    <a href="{% url 'publicacion' %}" type="button" class="btn btn-primary btn-lg">Atrás</a>
+<br>
+<br><br><br>
+<h2>Has click en el enlace debajo para leer.</h2>
+
+<a target="_blank" href="{{publicarlibros.enlace}}">{{publicarlibros.enlace}}</a>
+<br>
+<br>
+
+<h3>¿Qué te pareció el libro? Dejanos tu comentario.</h3>
+
+<!--Form-->
+<form method="post" style="background-color: rgb(143, 143, 143);"> {% csrf_token %}
+
+    {{form}}
+    <br>
+    <button type="submit" class="btn btn-primary btn-lg">Comentar</button>
+
+</form>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Comentarios:</h5>
+      
+      {% for comentario in publicarlibros.comentario.all  %}
+      <h5 class="card-title">{{comentario.autor}}</h5>
+      <h6 class="card-title">{{comentario.fecha}}</h6>    
+      <p class="card-text">{{comentario.cuerpo}}</p>
+
+      {% endfor %}
+        
+      
+    </div>
+  </div>
+
+
+{% endblock contenido %}
+    

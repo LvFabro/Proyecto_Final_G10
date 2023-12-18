@@ -6,6 +6,6 @@ from django.shortcuts import render
 #View basada en función:
 
 def generos_view(request): 
-    return render(request, 'generos.html', {})
+    return render(request, 'generos/generos.html', {})
 
 

@@ -20,7 +20,7 @@
     <h4>{{publicado.fecha}}</h4>
   </div>
   <div class="card-body">
-    <h5 class="card-title">{{publicado.titulo}}, de {{publicado.autor}}, Género: {{publicado.categoria}} 
+    <h5 class="card-title">{{publicado.titulo}}, publicado por: <strong style="color: black;">{{publicado.autor.username}}</strong>, Género: {{publicado.categoria}} 
       <span>
         
         <!--editar publicacion-->
@@ -31,9 +31,11 @@
     
     </span></h5>
     <p class="card-text"></p>
-    <a href="" class="btn btn-primary">LEER</a> 
+    <a href="{% url 'leer' publicado.id %}" class="btn btn-primary">LEER</a> 
   </div>
 </div>
+
+{{form}}
 
 {% endfor %}
   
