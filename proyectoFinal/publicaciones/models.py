@@ -16,6 +16,7 @@ class PublicarLibro(models.Model):
     enlace = models.TextField()
     categoria = models.ForeignKey(Categorias, related_name = 'publicaciones', on_delete = models.SET_NULL, null=True)
     autor = models.ForeignKey(Usuario, related_name = 'publicaciones', on_delete = models.CASCADE)
+    imagen = models.ImageField(upload_to='imagen_publicacion', null=True, blank=True)
 
     def __str__(self):
         return self.titulo

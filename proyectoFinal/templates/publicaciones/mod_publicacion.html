@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block contenido %}
+{% load  %}
 
 <h3>Modifica aqui tu publicación.</h3>
 <br>
@@ -8,7 +9,7 @@
 <br>
 <br>
 <h2>Modifique los siguientes campos.</h2>
-<form method="post" style="background-color: #a7a7a7;" > {% csrf_token %}
+<form method="post" enctype="multipart/form-data" style="background-color: #a7a7a7;" > {% csrf_token %}
 {{form}}
 
 <button type="submit" class="btn btn-primary btn-lg">Establecer cambios</button>

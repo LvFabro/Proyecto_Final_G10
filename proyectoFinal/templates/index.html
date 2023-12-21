@@ -60,7 +60,12 @@
                 </ul>
                  
                 <ul class="actions">
-                    <li><a href="{% url 'registrar' %}" class="button">Registrarse</a></li>
+                    <!--Si el usuario no esta registrado este botón se mostrará, de lo contrario, no.-->
+                    {% if not user.is_authenticated %}
+                        <li><a href="{% url 'registrar' %}" class="button">Registrarse</a></li>
+                    {% endif %}
+                        
+                    
                 </ul>
             </div>
         </section>
@@ -68,37 +73,13 @@
     <!-- One -->
         <section id="one" class="wrapper style2 spotlights">
             <section>
-                <a href="#" class="image"><img src="{% static 'images/pic01.jpg' %}" alt="" data-position="center center" /></a>
-                <div class="content">
-                    <div class="inner">
-                        <h2>Leer</h2>
-                        <p>Accede a los libros virtuales de diversos géneros publicados por ti o por otros usuarios.</p>
-                        <ul class="actions">
-                            <li><a href="{% url 'generosLiterarios' %}" class="button">Leer mas</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <a href="#" class="image"><img src="{% static 'images/pic02.jpg' %}" alt="" data-position="top center" /></a>
+                <a href="#" class="image"><img src="{% static 'images/hackerxd.jpg' %}" alt="" data-position="top center" /></a>
                 <div class="content">
                     <div class="inner">
                         <h2>Publicar</h2>
                         <p>Publica o comparte un libro virtual del género que más te guste para que otros usuarios puedan disfrutarlo.</p>
                         <ul class="actions">
                             <li><a href="{% url 'publicacion' %}" class="button">Publicar</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <a href="#" class="image"><img src="{% static 'images/pic03.jpg' %}" alt="" data-position="25% 25%" /></a>
-                <div class="content">
-                    <div class="inner">
-                        <h2>Opinar</h2>
-                        <p>Deja una reseña acerca de un libro que te haya gustado.</p>
-                        <ul class="actions">
-                            <li><a href="generic.html" class="button">Reseñar</a></li>
                         </ul>
                     </div>
                 </div>

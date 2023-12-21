@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load  %}
+{% load static %}
 
 {% block contenido %}
 <br>
@@ -9,6 +10,33 @@
     <h1>PUBLICACIONES</h1>
     <h4>Aquí se añanden las publicaciones</h4>    
     <br>
+      <form method="get"> {% csrf_token %}
+
+        
+        <select name="categoria" id="">
+
+          <option value="">Todo</option>
+          {% for categoria in categorias %}
+
+          <option value="{{categoria.id}}">{{categoria.nombre}}</option>
+        
+          {% endfor %}
+          
+        </select>
+
+        <select name="ordenar" id="">
+          <option value="">Predeterminado</option>
+          <option value="date.asc">Fecha Ascendente</option>
+          <option value="date.desc">Fecha Descendente</option>
+          <option value="alf.asc">Alfabéticamente Ascendente</option>
+          <option value="alf.desc">Alfabéticamente Descendente</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary btn-lg">Filtro</button>
+      
+
+      </form>
+    <br>
         <a href="{% url 'publicar' %}" type="button" class="btn btn-primary btn-lg">Crear Publicacion</a>
         <br>  
 <br>
@@ -17,12 +45,18 @@
 
 <div class="card">
   <div class="card-header">
+    
     <h4>{{publicado.fecha}}</h4>
   </div>
   <div class="card-body">
+    <span>
+       {% if publicarlibros.imagen %}
+        <img src="{{publicarlibro.imagen.url}}" class="img-fluid rounded-start" width="150"  alt="...">
+        {% else %}
+        <img src="{{publicarlibro.imagen.url}}" class="img-fluid rounded-start" width="150"  alt="..."> 
+      {% endif %}
     <h5 class="card-title">{{publicado.titulo}}, publicado por: <strong style="color: black;">{{publicado.autor.username}}</strong>, Género: {{publicado.categoria}} 
-      <span>
-        
+       
         <!--editar publicacion-->
         <a href="{% url 'editar' publicado.id %}"><i class="fa-solid fa-file-pen"></i></a>
         
@@ -32,6 +66,7 @@
     </span></h5>
     <p class="card-text"></p>
     <a href="{% url 'leer' publicado.id %}" class="btn btn-primary">LEER</a> 
+    <br>
   </div>
 </div>
 
@@ -39,9 +74,4 @@
 
 {% endfor %}
   
-  
-
-
-
-    
 {% endblock contenido %}

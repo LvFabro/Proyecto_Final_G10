@@ -24,14 +24,19 @@
 
 </form>
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 50rem;">
+    
     <div class="card-body">
       <h5 class="card-title">Comentarios:</h5>
-      
+      <hr>
       {% for comentario in publicarlibros.comentario.all  %}
+      
       <h5 class="card-title">{{comentario.autor}}</h5>
       <h6 class="card-title">{{comentario.fecha}}</h6>    
       <p class="card-text">{{comentario.cuerpo}}</p>
+      <a href="{% url 'eliminar-comentario' comentario.id %}"><i class="fa-solid fa-xmark"></i></a>
+      <a href="{% url 'modificar-comentario' comentario.id %}"><i class="fa-solid fa-file-pen"></i></a>
+      <hr>
 
       {% endfor %}
         

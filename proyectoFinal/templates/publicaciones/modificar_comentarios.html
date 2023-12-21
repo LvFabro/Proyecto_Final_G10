@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+
+<h2>¿Estás seguro de eliminar el comentario?</h2>
+
+<form method="post">{% csrf_token %}
+
+    {{form}}
+
+<button type="submit" class="btn btn-primary btn-lg" >Eliminar</button>
+</form>
+    
+{% endblock contenido %}
+    

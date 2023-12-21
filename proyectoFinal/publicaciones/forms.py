@@ -4,11 +4,12 @@ from .models import PublicarLibro, Comentarios
 class CrearPublicacion(forms.ModelForm):
     class Meta:
         model = PublicarLibro
-        fields = ['titulo', 'enlace', 'categoria']
+        fields = ['titulo', 'enlace', 'categoria', 'imagen']
 
 class ComentariosFormulario(forms.ModelForm):
     class Meta:
         model = Comentarios
         fields =['cuerpo']
+
 
 
