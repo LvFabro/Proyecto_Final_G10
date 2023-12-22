@@ -3,6 +3,8 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -16,5 +18,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+
 
 

@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-wv+c&o=)y#knzzenqh_u0=^iz^=#q(qjrmk++$=!z(n=q5z5nu
 
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['LvFabro.pythonanywhere.com']
 
 
 
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'proyectoFinal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
