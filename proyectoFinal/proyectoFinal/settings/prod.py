@@ -9,11 +9,11 @@ DEBUG = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'NAME': 'LvFabro$proyectofinal_db',
+        'USER': 'LvFabro',
+        'PASSWORD': 'grovestreet',
+        'HOST': 'LvFabro.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
     }
 }
 
