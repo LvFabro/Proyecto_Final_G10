@@ -50,11 +50,7 @@
   </div>
   <div class="card-body">
     <span>
-       {% if publicarlibros.imagen %}
-        <img src="{{publicarlibro.imagen.url}}" class="img-fluid rounded-start" width="150"  alt="...">
-        {% else %}
-        <img src="{% static 'images/hackerxd.jpg' %}" class="img-fluid rounded-start" width="150"  alt="..."> 
-      {% endif %}
+      
     <h5 class="card-title">{{publicado.titulo}}, publicado por: <strong style="color: black;">{{publicado.autor.username}}</strong>, Género: {{publicado.categoria}} 
        
         <!--editar publicacion-->

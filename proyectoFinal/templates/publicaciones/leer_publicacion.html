@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-
+{% load  %}
+{% load static %}
 
 {% block contenido %}
 
@@ -8,10 +9,16 @@
 <br>
 <br><br><br>
 <h2>Has click en el enlace debajo para leer.</h2>
-
+<br>
+<h1>{{publicarlibros.titulo}}</h1>
 <a target="_blank" href="{{publicarlibros.enlace}}">{{publicarlibros.enlace}}</a>
 <br>
 <br>
+      {% if publicarlibros.imagen %}
+        <img src="{{publicarlibros.imagen.url}}" class="img-fluid rounded-start" width="400"  alt="...">
+      {% else %}
+        <img src="{% static 'images/hackerxd.jpg' %}" class="img-fluid rounded-start" width="250"  alt="..."> 
+      {% endif %}
 
 <h3>¿Qué te pareció el libro? Dejanos tu comentario.</h3>
 
