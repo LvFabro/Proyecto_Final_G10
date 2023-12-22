@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 print(BASE_DIR)
 
 # Modelo de usuarios nuevo
@@ -31,19 +31,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'proyecto_final',
-        'USER': 'root',
-        'PASSWORD': 'grovestreet',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
 
 
 # Application definition
